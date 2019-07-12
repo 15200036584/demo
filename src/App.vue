@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <div class="header">
+
+    </div>
+    <router-view class="main"/>
+    <div class="footer">
+        <router-link to='/home' tag='li'>首页</router-link>
+        <router-link to='/mine' tag='li'>我的</router-link>
+    </div>
   </div>
 </template>
 
@@ -12,12 +18,41 @@ export default {
 </script>
 
 <style>
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+}
+html,body{
+  width:100%;
+  height:100%;
+}
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+}
+.header{
+  width:100%;
+  height:45px;
+}
+.main{
+  flex:1;
+}
+.footer{
+  width: 100%;
+  height:45px;
+  line-height: 45px;
+  display:flex;
+}
+.footer li{
+  flex:1;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+.router-link-active{
+  background: purple;
+  color:#fff;
+  cursor: pointer;
 }
 </style>
